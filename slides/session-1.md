@@ -303,3 +303,14 @@ The agent runs purely on instructions today. It has **no access to real company 
 - 🎨 **Image Generation** — Add visual content creation
 
 See you next week! 🚀
+
+---
+layout: intro
+theme: quantum
+customTheme: .demo/templates/microsoft-theme.css
+transition: fadeIn
+---
+
+# Try it now! 🚀
+
+[github.com/sebastienlevert/building-declarative-agents](https://github.com/sebastienlevert/building-declarative-agents)

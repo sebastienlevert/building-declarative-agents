@@ -221,6 +221,13 @@ demos:
         slide: 21
         theme: .demo/templates/microsoft-theme.css
 
+  - title: "Slide: Try It Now"
+    steps:
+      - action: openSlide
+        path: slides/session-1.md
+        slide: 22
+        theme: .demo/templates/microsoft-theme.css
+
   - title: End Presentation
     steps:
       - action: executeVSCodeCommand

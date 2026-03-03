@@ -2,12 +2,6 @@ title: "Session 1: Your First Declarative Agent — From Scaffold to Persona"
 description: Build and deploy the Zava Insurance HR Onboarding Buddy, then level it up with rich instructions and conversation starters.
 version: 2
 demos:
-  - title: Start Presentation
-    steps:
-      - action: executeVSCodeCommand
-        command: demo-time.togglePresentationMode
-      - action: setPresentationView
-
   - title: "Slide: Title"
     steps:
       - action: openSlide
@@ -228,11 +222,4 @@ demos:
         slide: 22
         theme: .demo/templates/microsoft-theme.css
 
-  - title: End Presentation
-    steps:
-      - action: executeVSCodeCommand
-        command: demo-time.closePresentationView
-      - action: executeVSCodeCommand
-        command: demo-time.togglePresentationMode
-      - action: executeVSCodeCommand
-        command: demo-time.reset
+

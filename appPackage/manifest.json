@@ -1,0 +1,40 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.25/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.25",
+    "version": "${{TEAMS_APP_VERSION}}",
+    "id": "${{TEAMS_APP_ID}}",
+    "developer": {
+        "name": "Zava Insurance",
+        "websiteUrl": "https://www.zavainsurance.com",
+        "privacyUrl": "https://www.zavainsurance.com/privacy",
+        "termsOfUseUrl": "https://www.zavainsurance.com/terms"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "HR Onboarding Buddy${{APP_NAME_SUFFIX}}",
+        "full": "Zava Insurance HR Onboarding Buddy"
+    },
+    "description": {
+        "short": "Your AI-powered guide to getting started at Zava Insurance",
+        "full": "The HR Onboarding Buddy helps new Zava Insurance employees navigate their first weeks. Ask about onboarding logistics, benefits and policies, IT setup, organizational info, and more. Built as a declarative agent for Microsoft 365 Copilot."
+    },
+    "accentColor": "#0078D4",
+    "supportsChannelFeatures": "tier1",
+    "composeExtensions": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "copilotAgents": {
+        "declarativeAgents": [            
+            {
+                "id": "declarativeAgent",
+                "file": "declarativeAgent.json"
+            }
+        ]
+    },
+    "validDomains": []
+}

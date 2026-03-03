@@ -1,0 +1,15 @@
+{
+    "debug.onTaskErrors": "abort",
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "/aad.*.json"
+            ],
+            "schema": {}
+        }
+    ],
+
+    "workbench.statusBar.visible": true,
+    "workbench.editor.showTabs": "multiple",
+    "workbench.activityBar.location": "default"
+}

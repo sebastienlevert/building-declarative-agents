@@ -1,0 +1,111 @@
+/* Microsoft Fluent Dark — color overrides on top of quantum theme */
+
+.slide.quantum {
+  --demotime-primary: #60CDFF;
+  --demotime-secondary: #0078D4;
+  --demotime-accent: #50E6FF;
+  --demotime-light: #F5F5F5;
+
+  --demotime-color: #E0E0E0;
+  --demotime-background: linear-gradient(135deg, #1B1B1B 0%, #2D2D2D 100%);
+  --demotime-heading-color: #FFFFFF;
+  --demotime-heading-background: transparent;
+
+  --demotime-link-color: #60CDFF;
+  --demotime-link-active-color: #50E6FF;
+  --demotime-blockquote-border: #0078D4;
+  --demotime-blockquote-background: rgba(0, 120, 212, 0.12);
+
+  /* Default layout */
+  --demotime-default-background: linear-gradient(135deg, #1B1B1B 0%, #2D2D2D 100%);
+  --demotime-default-color: #E0E0E0;
+  --demotime-default-heading-color: #FFFFFF;
+  --demotime-default-heading-background: transparent;
+
+  /* Intro layout — Microsoft blue gradient */
+  --demotime-intro-background: linear-gradient(135deg, #0078D4 0%, #005A9E 50%, #003B73 100%);
+  --demotime-intro-color: #FFFFFF;
+  --demotime-intro-heading-color: #FFFFFF;
+  --demotime-intro-heading-background: transparent;
+
+  /* Section layout — Microsoft blue gradient */
+  --demotime-section-background: linear-gradient(135deg, #0078D4 0%, #005A9E 100%);
+  --demotime-section-color: #FFFFFF;
+  --demotime-section-heading-color: #FFFFFF;
+  --demotime-section-heading-background: transparent;
+
+  /* Quote layout */
+  --demotime-quote-background: linear-gradient(135deg, #2D2D2D 0%, #1B1B1B 100%);
+  --demotime-quote-color: #E0E0E0;
+  --demotime-quote-heading-color: #60CDFF;
+  --demotime-quote-heading-background: transparent;
+
+  /* Two columns layout */
+  --demotime-two-columns-background: linear-gradient(135deg, #1B1B1B 0%, #2D2D2D 100%);
+  --demotime-two-columns-color: #E0E0E0;
+  --demotime-two-columns-heading-color: #60CDFF;
+  --demotime-two-columns-heading-background: transparent;
+
+  /* Image layouts */
+  --demotime-image-left-background: linear-gradient(135deg, #1B1B1B 0%, #2D2D2D 100%);
+  --demotime-image-left-color: #E0E0E0;
+  --demotime-image-left-heading-color: #60CDFF;
+  --demotime-image-left-heading-background: transparent;
+  --demotime-image-right-background: linear-gradient(135deg, #1B1B1B 0%, #2D2D2D 100%);
+  --demotime-image-right-color: #E0E0E0;
+  --demotime-image-right-heading-color: #60CDFF;
+  --demotime-image-right-heading-background: transparent;
+
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Intro layout — ensure white text */
+.slide.quantum .intro h1 {
+  -webkit-text-fill-color: #FFFFFF;
+}
+
+.slide.quantum .intro p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.slide.quantum .intro h2 {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Section layout — ensure white text */
+.slide.quantum .section h1 {
+  -webkit-text-fill-color: #FFFFFF;
+}
+
+.slide.quantum .section p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.slide.quantum .section h2 {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Table styling */
+.slide.quantum th {
+  background: #0078D4;
+  color: #FFFFFF;
+}
+
+.slide.quantum td {
+  border-bottom-color: #3D3D3D;
+}
+
+.slide.quantum tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Inline code */
+.slide.quantum code {
+  background-color: rgba(0, 120, 212, 0.2);
+  color: #60CDFF;
+}
+
+/* Strong text brand color */
+.slide.quantum strong {
+  color: #60CDFF;
+}

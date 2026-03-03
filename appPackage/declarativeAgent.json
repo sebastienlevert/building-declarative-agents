@@ -1,0 +1,29 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.6/schema.json",
+    "version": "v1.6",
+    "name": "HR Onboarding Buddy${{APP_NAME_SUFFIX}}",
+    "description": "A friendly AI assistant that helps new Zava Insurance employees navigate their first weeks — answering questions about onboarding logistics, benefits, IT setup, and company policies.",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+        {
+            "title": "First-Week Checklist",
+            "text": "What's my first-week checklist?"
+        },
+        {
+            "title": "Benefits Contacts",
+            "text": "Who do I contact for benefits questions?"
+        },
+        {
+            "title": "IT Setup Help",
+            "text": "How do I set up my laptop and accounts?"
+        },
+        {
+            "title": "PTO Policy",
+            "text": "What's the PTO policy at Zava Insurance?"
+        },
+        {
+            "title": "Badge Access",
+            "text": "I need help with my badge access"
+        }
+    ]
+}

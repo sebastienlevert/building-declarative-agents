@@ -8,5 +8,6 @@ demos:
         path: slides/session-1.md
         slide: 1
         theme: .demo/templates/microsoft-theme.css
+      - action: setPresentationView
 
 

@@ -9,7 +9,7 @@
         }
     ],
 
-    "workbench.statusBar.visible": false,
-    "workbench.editor.showTabs": "none",
-    "workbench.activityBar.location": "hidden"
+    "workbench.statusBar.visible": true,
+    "workbench.editor.showTabs": "multiple",
+    "workbench.activityBar.location": "default"
 }

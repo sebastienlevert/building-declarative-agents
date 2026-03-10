@@ -7,7 +7,7 @@ An 8-week video series that progressively builds a production-ready **Zava Insur
 | # | Session | Status |
 |---|---------|--------|
 | 1 | [**Your First Declarative Agent — From Scaffold to Persona**](slides/session-1.md) | ✅ Complete |
-| 2 | Configuring Agent Capabilities — Embedded Knowledge, Code Interpreter & Image Generation | 🔜 Coming soon |
+| 2 | [**Configuring Agent Capabilities — Embedded Knowledge, Code Interpreter & Image Generation**](slides/session-2.md) | ✅ Complete |
 | 3 | Grounding Your Agent with Knowledge | 🔜 Coming soon |
 | 4 | Extending with Actions — API Plugins & MCP Servers | 🔜 Coming soon |
 | 5 | Advanced Manifest Capabilities | 🔜 Coming soon |

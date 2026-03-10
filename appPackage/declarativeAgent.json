@@ -25,5 +25,21 @@
             "title": "Badge Access",
             "text": "I need help with my badge access"
         }
+    ],
+    "capabilities": [
+        {
+            "name": "EmbeddedKnowledge",
+            "files": [ 
+                { "file": "EmbeddedKnowledge/benefits-guide.docx" },
+                { "file": "EmbeddedKnowledge/it-setup-guide.docx" },
+                { "file": "EmbeddedKnowledge/employee-handbook.docx" }
+            ]
+        },
+        {
+            "name": "CodeInterpreter"
+        },
+        {
+            "name": "GraphicArt"
+        }
     ]
 }

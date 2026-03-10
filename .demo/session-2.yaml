@@ -1,0 +1,12 @@
+title: "Session 2: Configuring Agent Capabilities — Embedded Knowledge, Code Interpreter & Image Generation"
+description: Give your agent superpowers — bundle local knowledge files, enable code interpreter for precise calculations, and add image generation for visual content.
+version: 2
+demos:
+  - title: "Start Slides"
+    steps:
+      - action: openSlide
+        path: slides/session-2.md
+        slide: 1
+        theme: .demo/templates/microsoft-theme.css
+      - action: executeVSCodeCommand
+        command: demo-time.togglePresentationMode

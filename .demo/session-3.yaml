@@ -1,0 +1,12 @@
+title: "Session 3: Grounding Your Agent with Knowledge — SharePoint, Teams, Web, Email & People"
+description: Expand the agent's reach beyond embedded files — connect it to SharePoint document libraries, Teams conversations, scoped web search, Outlook email, and People profiles for comprehensive organizational knowledge with citations and access control.
+version: 2
+demos:
+  - title: "Start Slides"
+    steps:
+      - action: openSlide
+        path: slides/session-3.md
+        slide: 1
+        theme: .demo/templates/microsoft-theme.css
+      - action: executeVSCodeCommand
+        command: demo-time.togglePresentationMode

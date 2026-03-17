@@ -28,11 +28,33 @@
     ],
     "capabilities": [
         {
-            "name": "EmbeddedKnowledge",
-            "files": [ 
-                { "file": "EmbeddedKnowledge/benefits-guide.docx" },
-                { "file": "EmbeddedKnowledge/it-setup-guide.docx" },
-                { "file": "EmbeddedKnowledge/employee-handbook.docx" }
+            "name": "Email"
+        },
+        {
+            "name": "People"
+        },
+        {
+            "name": "OneDriveAndSharePoint",
+            "items_by_url": [
+                {
+                    "url": "${{ZAVA_ONBOARDING_DOCUMENTS_URL}}"
+                }
+            ]
+        },
+        {
+            "name": "TeamsMessages",
+            "urls": [
+                {
+                    "url": "${{ZAVA_NEW_HIRE_TEAMS_CHANNEL_URL}}"
+                }
+            ]
+        },
+        {
+            "name": "WebSearch",
+            "sites": [
+                {
+                    "url": "${{ZAVA_WEBSITE_URL}}"
+                }
             ]
         },
         {

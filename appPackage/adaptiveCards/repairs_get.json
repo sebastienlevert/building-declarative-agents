@@ -1,0 +1,73 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "auto",
+              "items": [
+                {
+                  "type": "Image",
+                  "url": "${image}",
+                  "altText": "${title}",
+                  "size": "medium",
+                  "style": "default"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "${title}",
+                  "weight": "bolder",
+                  "size": "medium",
+                  "wrap": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "Repair #${id}",
+                  "isSubtle": true,
+                  "spacing": "none",
+                  "size": "small"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "${description}",
+          "wrap": true
+        },
+        {
+          "type": "FactSet",
+          "facts": [
+            {
+              "title": "Assigned To",
+              "value": "${assignedTo}"
+            },
+            {
+              "title": "Date",
+              "value": "${date}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

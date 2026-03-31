@@ -1,0 +1,12 @@
+title: "Session 4: Adding Actions — API Plugins & MCP Plugins"
+description: Give the agent the ability to act — connect a Repairs REST API via an OpenAPI-based API plugin and a PTO & HR Policies service via an MCP plugin, with rich Adaptive Card responses for both.
+version: 2
+demos:
+  - title: "Start Slides"
+    steps:
+      - action: openSlide
+        path: slides/session-4.md
+        slide: 1
+        theme: .demo/templates/microsoft-theme.css
+      - action: executeVSCodeCommand
+        command: demo-time.togglePresentationMode

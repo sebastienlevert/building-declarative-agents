@@ -1,0 +1,214 @@
+openapi: 3.0.0
+info:
+  title: Repairs API - Subset
+  description: A simple service to manage repairs for various items
+  version: 1.0.0
+servers:
+  - url: https://repairshub.azurewebsites.net/
+paths:
+  '/repairs/{id}':
+    delete:
+      summary: Delete a repair by ID
+      operationId: repairs_item_delete
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Repair deleted
+          content:
+            application/json:
+              schema:
+                required:
+                  - message
+                type: object
+                properties:
+                  message:
+                    type: string
+    get:
+      summary: Get a repair by ID
+      operationId: repairs_item_get
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Repair found
+          content:
+            application/json:
+              schema:
+                required:
+                  - id
+                  - title
+                  - description
+                  - assignedTo
+                  - date
+                  - image
+                type: object
+                properties:
+                  id:
+                    type: number
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  assignedTo:
+                    type: string
+                  date:
+                    type: string
+                  image:
+                    type: string
+    patch:
+      summary: Update a repair by ID
+      operationId: repairs_item_patch
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: number
+                title:
+                  type: string
+                description:
+                  type: string
+                assignedTo:
+                  type: string
+                date:
+                  type: string
+                image:
+                  type: string
+        required: true
+      responses:
+        '200':
+          description: Repair updated
+          content:
+            application/json:
+              schema:
+                required:
+                  - id
+                  - title
+                  - description
+                  - assignedTo
+                  - date
+                  - image
+                type: object
+                properties:
+                  id:
+                    type: number
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  assignedTo:
+                    type: string
+                  date:
+                    type: string
+                  image:
+                    type: string
+  /repairs:
+    get:
+      summary: Get all repairs
+      operationId: repairs_get
+      parameters:
+        - name: assignedTo
+          in: query
+          explode: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of repairs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  required:
+                    - id
+                    - title
+                    - description
+                    - assignedTo
+                    - date
+                    - image
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    title:
+                      type: string
+                    description:
+                      type: string
+                    assignedTo:
+                      type: string
+                    date:
+                      type: string
+                    image:
+                      type: string
+    post:
+      summary: Create a new repair
+      operationId: repairs_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - title
+                - description
+                - assignedTo
+                - date
+                - image
+              type: object
+              properties:
+                title:
+                  type: string
+                description:
+                  type: string
+                assignedTo:
+                  type: string
+                date:
+                  type: string
+                image:
+                  type: string
+        required: true
+      responses:
+        '201':
+          description: Repair created
+          content:
+            application/json:
+              schema:
+                required:
+                  - id
+                  - title
+                  - description
+                  - assignedTo
+                  - date
+                  - image
+                type: object
+                properties:
+                  id:
+                    type: number
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  assignedTo:
+                    type: string
+                  date:
+                    type: string
+                  image:
+                    type: string
+components: { }

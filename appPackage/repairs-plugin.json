@@ -1,0 +1,50 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.3/schema.json",
+    "schema_version": "v2.3",
+    "name_for_human": "Repairs API",
+    "description_for_human": "A simple service to manage repairs for various items",
+    "description_for_model": "A simple service to manage repairs for various items",
+    "contact_email": "publisher-email@example.com",
+    "namespace": "hronboardingbuddy",
+    "capabilities": {},
+    "functions": [
+        {
+            "name": "repairs_get",
+            "description": "Get all repairs"
+        },
+        {
+            "name": "repairs_item_delete",
+            "description": "Delete a repair by ID"
+        },
+        {
+            "name": "repairs_item_get",
+            "description": "Get a repair by ID"
+        },
+        {
+            "name": "repairs_item_patch",
+            "description": "Update a repair by ID"
+        },
+        {
+            "name": "repairs_post",
+            "description": "Create a new repair"
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "OpenApi",
+            "auth": {
+                "type": "None"
+            },
+            "spec": {
+                "url": "apiSpecificationFile/openapi.yaml"
+            },
+            "run_for_functions": [
+                "repairs_get",
+                "repairs_post",
+                "repairs_item_delete",
+                "repairs_item_get",
+                "repairs_item_patch"
+            ]
+        }
+    ]
+}

@@ -22,8 +22,12 @@
             "text": "What's the PTO policy at Zava Insurance?"
         },
         {
-            "title": "Badge Access",
-            "text": "I need help with my badge access"
+            "title": "Current claims",
+            "text": "What are the current claims that I should be aware of?"
+        },
+        {
+            "title": "Get all repairs",
+            "text": "Get all repairs that are currently active and available in the system."
         }
     ],
     "capabilities": [
@@ -62,6 +66,16 @@
         },
         {
             "name": "GraphicArt"
+        }
+    ],
+    "actions": [
+        {
+            "id": "repairsActions",
+            "file": "repairs-plugin.json"
+        },
+        {
+            "id": "zavaPlugin",
+            "file": "zava-plugin.json"
         }
     ]
 }

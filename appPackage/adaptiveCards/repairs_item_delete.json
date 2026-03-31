@@ -1,0 +1,32 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Repair Deleted",
+          "weight": "bolder",
+          "size": "large",
+          "color": "attention",
+          "wrap": true
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "separator": true,
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "${message}",
+          "wrap": true,
+          "size": "medium"
+        }
+      ]
+    }
+  ]
+}

@@ -4,6 +4,28 @@
 version: v1.10
 
 provision:
+  # Pre-provision: validate that required environment variables are set
+  - uses: script
+    name: validate-environment
+    with:
+      run: |
+        echo "Validating environment variables..." &&
+        node -e "
+          const required = [
+            'ZAVA_ONBOARDING_DOCUMENTS_URL',
+            'ZAVA_NEW_HIRE_TEAMS_CHANNEL_URL',
+            'ZAVA_WEBSITE_URL',
+            'AGENT_DISCLAIMER'
+          ];
+          const missing = required.filter(v => !process.env[v]);
+          if (missing.length) {
+            console.error('Missing required env vars:', missing.join(', '));
+            process.exit(1);
+          }
+          console.log('All required environment variables are set.');
+        "
+      shell: bash
+
   # Creates an app
   - uses: teamsApp/create
     with:
@@ -42,3 +64,13 @@ provision:
     writeToEnvironmentFile:
       titleId: M365_TITLE_ID
       appId: M365_APP_ID
+
+  # Post-provision: log deployment details
+  - uses: script
+    name: post-provision-log
+    with:
+      run: |
+        echo "✅ Provisioned hr-onboarding-buddy (${{APP_NAME_SUFFIX}}) at $(date)" &&
+        echo "   View in M365 Copilot: https://m365.cloud.microsoft/chat/?titleId=${{M365_TITLE_ID}}" 
+        echo "   View in Developer Portal: https://dev.teams.cloud.microsoft/apps/${{TEAMS_APP_ID}}/overview"
+      shell: bash

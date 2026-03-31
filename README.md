@@ -10,7 +10,7 @@ An 8-week video series that progressively builds a production-ready **Zava Insur
 | 2 | [**Configuring Agent Capabilities — Embedded Knowledge, Code Interpreter & Image Generation**](slides/session-2.md) | ✅ Complete |
 | 3 | [**Grounding Your Agent with Knowledge**](slides/session-3.md) | ✅ Complete |
 | 4 | [**Extending with Actions — API Plugins & MCP Servers**](slides/session-4.md) | ✅ Complete |
-| 5 | Advanced Manifest Capabilities | 🔜 Coming soon |
+| 5 | [**Advanced Manifest Capabilities & Multi-Source Orchestration**](slides/session-5.md) | ✅ Complete |
 | 6 | Connected Agents — Composing an Agent Ecosystem | 🔜 Coming soon |
 | 7 | Testing and Debugging your Agent | 🔜 Coming soon |
 | 8 | Publishing, Governance & Real-World Patterns | 🔜 Coming soon |

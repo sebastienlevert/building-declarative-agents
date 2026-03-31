@@ -4,6 +4,17 @@
     "name": "HR Onboarding Buddy",
     "description": "A friendly AI assistant that helps new Zava Insurance employees navigate their first weeks — answering questions about onboarding logistics, benefits, IT setup, and company policies.",
     "instructions": "$[file('instruction.txt')]",
+    "disclaimer": {
+        "text": "${{AGENT_DISCLAIMER}}"
+    },
+    "behavior_overrides": {
+        "suggestions": {
+            "disabled": true
+        },
+        "special_instructions": {
+            "discourage_model_knowledge": true
+        }
+    },
     "conversation_starters": [
         {
             "title": "First-Week Checklist",

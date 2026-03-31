@@ -7,6 +7,28 @@ environmentFolderPath: ./env
 
 # Triggered when 'teamsapp provision' is executed
 provision:
+  # Pre-provision: validate that required environment variables are set
+  - uses: script
+    name: validate-environment
+    with:
+      run: |
+        echo "Validating environment variables..." &&
+        node -e "
+          const required = [
+            'ZAVA_ONBOARDING_DOCUMENTS_URL',
+            'ZAVA_NEW_HIRE_TEAMS_CHANNEL_URL',
+            'ZAVA_WEBSITE_URL',
+            'AGENT_DISCLAIMER'
+          ];
+          const missing = required.filter(v => !process.env[v]);
+          if (missing.length) {
+            console.error('Missing required env vars:', missing.join(', '));
+            process.exit(1);
+          }
+          console.log('All required environment variables are set.');
+        "
+      shell: bash
+
   # Creates an app
   - uses: teamsApp/create
     with:
@@ -43,12 +65,40 @@ provision:
       appId: M365_APP_ID
       shareLink: SHARE_LINK
 
+  # Post-provision: log deployment details
+  - uses: script
+    name: post-provision-log
+    with:
+      run: |
+        echo "✅ Provisioned hr-onboarding-buddy (${{APP_NAME_SUFFIX}}) at $(date)" &&
+        echo "   Teams App ID: ${{TEAMS_APP_ID}}" &&
+        echo "   M365 Title ID: ${{M365_TITLE_ID}}" &&
+        echo "   Share Link: ${{SHARE_LINK}}"
+      shell: bash
+
 # Triggered when 'teamsapp publish' is executed
 publish:
-  # Validate using manifest schema
+  # Pre-publish: validate the manifest schema
   - uses: teamsApp/validateManifest
     with:
       manifestPath: ./appPackage/manifest.json
+
+  # Pre-publish: verify disclaimer is configured
+  - uses: script
+    name: pre-publish-check
+    with:
+      run: |
+        echo "Running pre-publish checks..." &&
+        node -e "
+          const fs = require('fs');
+          const manifest = JSON.parse(fs.readFileSync('./appPackage/declarativeAgent.json', 'utf8'));
+          if (!manifest.disclaimer || !manifest.disclaimer.text) {
+            console.error('ERROR: Agent must have a disclaimer before publishing.');
+            process.exit(1);
+          }
+          console.log('Pre-publish checks passed.');
+        "
+      shell: bash
 
   # Build app package with latest env value
   - uses: teamsApp/zipAppPackage

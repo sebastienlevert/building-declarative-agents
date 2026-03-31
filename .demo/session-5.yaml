@@ -1,0 +1,12 @@
+title: "Session 5: Advanced Manifest Capabilities & Multi-Source Orchestration"
+description: Polish the agent for production — add disclaimers, behavior overrides, environment variable patterns, and custom lifecycle commands in the Agents Toolkit.
+version: 2
+demos:
+  - title: "Start Slides"
+    steps:
+      - action: openSlide
+        path: slides/session-5.md
+        slide: 1
+        theme: .demo/templates/microsoft-theme.css
+      - action: executeVSCodeCommand
+        command: demo-time.togglePresentationMode

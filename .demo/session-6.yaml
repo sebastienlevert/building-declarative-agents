@@ -1,0 +1,12 @@
+title: "Session 6: Connected Agents — Composing an Agent Ecosystem"
+description: Scale your agent beyond a single manifest by connecting it to specialist worker agents for IT troubleshooting and benefits advising — compose an agent ecosystem with the worker_agents property.
+version: 2
+demos:
+  - title: "Start Slides"
+    steps:
+      - action: openSlide
+        path: slides/session-6.md
+        slide: 1
+        theme: .demo/templates/microsoft-theme.css
+      - action: executeVSCodeCommand
+        command: demo-time.togglePresentationMode

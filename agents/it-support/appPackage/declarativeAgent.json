@@ -1,0 +1,53 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.6/schema.json",
+    "version": "v1.6",
+    "name": "IT Support Agent",
+    "description": "A specialist IT troubleshooting agent for Zava Insurance employees — handles device issues, software problems, network connectivity, and IT service requests with deep knowledge base access.",
+    "instructions": "$[file('instruction.txt')]",
+    "disclaimer": {
+        "text": "I'm an AI assistant — for urgent IT issues or security incidents, contact the IT Helpdesk directly at ext. 4357."
+    },
+    "behavior_overrides": {
+        "suggestions": {
+            "disabled": false
+        },
+        "special_instructions": {
+            "discourage_model_knowledge": true
+        }
+    },
+    "conversation_starters": [
+        {
+            "title": "Monitor Not Working",
+            "text": "My laptop won't connect to the external monitor — I've tried two different cables."
+        },
+        {
+            "title": "VPN Issues",
+            "text": "I can't connect to the VPN from home. It keeps timing out."
+        },
+        {
+            "title": "Software Access",
+            "text": "I need access to the Claims Management System. How do I request it?"
+        },
+        {
+            "title": "Password Reset",
+            "text": "My account got locked out after too many failed login attempts."
+        },
+        {
+            "title": "Printer Setup",
+            "text": "How do I connect to the office printer on the 3rd floor?"
+        }
+    ],
+    "capabilities": [
+        {
+            "name": "OneDriveAndSharePoint",
+            "items_by_url": [
+                {
+                    "url": "${{IT_KNOWLEDGE_BASE_URL}}"
+                }
+            ]
+        },
+        {
+            "name": "CodeInterpreter"
+        }
+    ]
+}

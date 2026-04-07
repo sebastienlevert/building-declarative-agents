@@ -88,5 +88,13 @@
             "id": "zavaPlugin",
             "file": "zava-plugin.json"
         }
+    ],
+    "worker_agents": [
+        {
+            "id": "${{IT_SUPPORT_TITLE_ID}}"
+        },
+        {
+            "id": "${{BENEFITS_ADVISOR_TITLE_ID}}"
+        }
     ]
 }

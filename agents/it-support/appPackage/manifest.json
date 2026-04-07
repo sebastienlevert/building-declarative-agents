@@ -1,0 +1,39 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.25/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.25",
+    "version": "${{TEAMS_APP_VERSION}}",
+    "id": "${{TEAMS_APP_ID}}",
+    "developer": {
+        "name": "Zava Insurance",
+        "websiteUrl": "https://www.zavainsurance.com",
+        "privacyUrl": "https://www.zavainsurance.com/privacy",
+        "termsOfUseUrl": "https://www.zavainsurance.com/terms"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "IT Support Agent",
+        "full": "Zava Insurance IT Support Agent"
+    },
+    "description": {
+        "short": "Your AI-powered IT troubleshooting specialist at Zava Insurance",
+        "full": "The IT Support Agent helps Zava Insurance employees resolve technical issues — from laptop and monitor problems to VPN connectivity, software access, and account management. Grounded in the IT Knowledge Base with deep troubleshooting expertise."
+    },
+    "accentColor": "#107C10",
+    "composeExtensions": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "copilotAgents": {
+        "declarativeAgents": [
+            {
+                "id": "declarativeAgent",
+                "file": "declarativeAgent.json"
+            }
+        ]
+    },
+    "validDomains": []
+}

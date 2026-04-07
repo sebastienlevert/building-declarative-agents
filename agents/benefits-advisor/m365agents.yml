@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=https://aka.ms/m365-agents-toolkits/v1.11/yaml.schema.json
+# Visit https://aka.ms/teamsfx-v5.0-guide for details on this file
+# Visit https://aka.ms/teamsfx-actions for details on actions
+version: v1.11
+
+environmentFolderPath: ./env
+
+# Triggered when 'teamsapp provision' is executed
+provision:
+  - uses: teamsApp/create
+    with:
+      name: benefits-advisor
+    writeToEnvironmentFile:
+      teamsAppId: TEAMS_APP_ID
+
+  - uses: teamsApp/zipAppPackage
+    with:
+      manifestPath: ./appPackage/manifest.json
+      outputZipPath: ./appPackage/build/appPackage.${{TEAMSFX_ENV}}.zip
+      outputFolder: ./appPackage/build
+
+  - uses: teamsApp/update
+    with:
+      appPackagePath: ./appPackage/build/appPackage.${{TEAMSFX_ENV}}.zip
+
+  - uses: teamsApp/extendToM365
+    with:
+      appPackagePath: ./appPackage/build/appPackage.${{TEAMSFX_ENV}}.zip
+    writeToEnvironmentFile:
+      titleId: M365_TITLE_ID
+      appId: M365_APP_ID
+
+  - uses: script
+    name: post-provision-log
+    with:
+      run: |
+        echo "✅ Provisioned benefits-advisor (${{APP_NAME_SUFFIX}}) at $(date)" &&
+        echo "   Teams App ID: ${{TEAMS_APP_ID}}" &&
+        echo "   M365 Title ID: ${{M365_TITLE_ID}}"
+      shell: bash

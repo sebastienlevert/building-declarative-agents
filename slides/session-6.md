@@ -324,36 +324,6 @@ Each maintained by the expert team. Every agent in the org leverages their exper
 > That's how you build an **agent ecosystem** — not one massive agent, but a network of specialists.
 
 ---
-layout: section
-theme: quantum
-customTheme: .demo/templates/microsoft-theme.css
-transition: fadeIn
----
-
-# Demo: Full Orchestration
-
----
-layout: default
-theme: quantum
-customTheme: .demo/templates/microsoft-theme.css
-transition: slideRight
----
-
-# The Complete Orchestration — 8 Turns
-
-| Turn | Question | Capability |
-|:---|:---|:---|
-| 1 | *"I started yesterday — what should I focus on?"* | 🧠 Instructions + 📦 Embedded Knowledge |
-| 2 | *"What's my actual onboarding progress?"* | 🔌 API Plugin |
-| 3 | *"Compliance training link doesn't work"* | 🛰️ MCP Server |
-| 4 | *"My laptop won't connect to the monitor"* | 🤝 IT Support (Connected Agent) |
-| 5 | *"Silver vs Gold health plan?"* | 🤝 Benefits Advisor (Connected Agent) |
-| 6 | *"8% to 401(k) — what's my take-home?"* | 📄 SharePoint + 🧮 Code Interpreter |
-| 7 | *"Make me a welcome graphic"* | 🎨 Image Generation |
-
-> Zero routing logic. Seven different capabilities. One seamless conversation.
-
----
 layout: default
 theme: quantum
 customTheme: .demo/templates/microsoft-theme.css

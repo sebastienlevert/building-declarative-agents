@@ -231,15 +231,6 @@ customTheme: .demo/templates/microsoft-theme.css
 transition: fadeIn
 ---
 
-# Demo: Building & Deploying the Worker Agents
-
----
-layout: section
-theme: quantum
-customTheme: .demo/templates/microsoft-theme.css
-transition: fadeIn
----
-
 # Delegation in Action
 
 ---

@@ -123,7 +123,7 @@ transition: slideRight
 
 | Aspect | Behavior |
 |:---|:---|
-| **Same tenant** | Both agents must be deployed in the same M365 tenant |
+| **Same tenant or public** | Worker agents must be in the same M365 tenant **or** be publicly available agents |
 | **Transparent delegation** | User sees one conversation — delegation is invisible |
 | **Independent config** | Each agent has its own instructions, knowledge, plugins, and guardrails |
 | **Permissions respected** | Each agent operates within the user's permission context |

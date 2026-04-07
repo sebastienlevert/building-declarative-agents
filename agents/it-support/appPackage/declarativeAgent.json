@@ -5,7 +5,7 @@
     "description": "A specialist IT troubleshooting agent for Zava Insurance employees — handles device issues, software problems, network connectivity, and IT service requests with deep knowledge base access.",
     "instructions": "$[file('instruction.txt')]",
     "disclaimer": {
-        "text": "I'm an AI assistant — for urgent IT issues or security incidents, contact the IT Helpdesk directly at ext. 4357."
+        "text": "${{AGENT_DISCLAIMER}}"
     },
     "behavior_overrides": {
         "suggestions": {

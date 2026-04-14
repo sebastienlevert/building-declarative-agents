@@ -29,12 +29,4 @@ provision:
     writeToEnvironmentFile:
       titleId: M365_TITLE_ID
       appId: M365_APP_ID
-
-  - uses: script
-    name: post-provision-log
-    with:
-      run: |
-        echo "✅ Provisioned it-support-agent (${{APP_NAME_SUFFIX}}) at $(date)" &&
-        echo "   Teams App ID: ${{TEAMS_APP_ID}}" &&
-        echo "   M365 Title ID: ${{M365_TITLE_ID}}"
-      shell: bash
+projectId: cf2eefd3-25f4-4462-bffe-8cd09e308c2b

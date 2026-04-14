@@ -81,10 +81,6 @@
     ],
     "actions": [
         {
-            "id": "repairsActions",
-            "file": "repairs-plugin.json"
-        },
-        {
             "id": "zavaPlugin",
             "file": "zava-plugin.json"
         }

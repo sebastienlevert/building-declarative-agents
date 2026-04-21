@@ -53,7 +53,7 @@ Publishing a declarative agent follows the standard Teams app lifecycle — your
 
 | Stage | Who | What Happens |
 |:---|:---|:---|
-| 🧑‍💻 **Developer Upload** | You | F5 / sideloading — only you can see it |
+| 🧑‍💻 **Developer Sideload** | You | F5 / sideloading — only you can see it |
 | 📦 **Org Submission** | You | Submit to the tenant app catalog — pending until reviewed |
 | ✅ **Admin Approval** | IT Admin | Review permissions, data access, then approve for users |
 

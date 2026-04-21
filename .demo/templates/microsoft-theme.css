@@ -109,3 +109,8 @@
 .slide.quantum strong {
   color: #60CDFF;
 }
+
+/* Code blocks — smaller font for better slide fit */
+.slide.quantum pre code {
+  font-size: 0.75em;
+}

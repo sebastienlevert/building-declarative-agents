@@ -128,10 +128,12 @@ Manual publishing works for a single agent. But in a real organization:
 - You want a **repeatable, auditable** deployment pipeline
 - No human should need to click "Publish" in VS Code
 
-The Agents Toolkit CLI supports **non-interactive authentication** with a username and password — designed for CI/CD pipelines.
+The Agents Toolkit CLI supports **non-interactive authentication** via environment variables — designed for CI/CD pipelines.
 
 ```bash
-atk publish --env prod --username $M365_USERNAME --password $M365_PASSWORD
+export M365_ACCOUNT_NAME=admin@contoso.com
+export M365_ACCOUNT_PASSWORD=********
+atk publish --env prod
 ```
 
 > Store credentials as **pipeline secrets** — never commit them to source control.
@@ -162,7 +164,10 @@ jobs:
         run: npm install -g @microsoft/m365agentstoolkit-cli
 
       - name: Publish to org catalog
-        run: atk publish --env prod --username ${{ secrets.M365_USERNAME }} --password ${{ secrets.M365_PASSWORD }}
+        run: atk publish --env prod
+        env:
+          M365_ACCOUNT_NAME: ${{ secrets.M365_ACCOUNT_NAME }}
+          M365_ACCOUNT_PASSWORD: ${{ secrets.M365_ACCOUNT_PASSWORD }}
 ```
 
 Every merge to `main` automatically publishes. Pair with **branch protection** and **PR reviews** for safe instruction changes.
@@ -193,12 +198,14 @@ steps:
   - script: npm install -g @microsoft/m365agentstoolkit-cli
     displayName: 'Install Agents Toolkit'
 
-  - script: |
-      atk publish --env prod --username $(M365_USERNAME) --password $(M365_PASSWORD)
+  - script: atk publish --env prod
     displayName: 'Publish to org catalog'
+    env:
+      M365_ACCOUNT_NAME: $(M365_ACCOUNT_NAME)
+      M365_ACCOUNT_PASSWORD: $(M365_ACCOUNT_PASSWORD)
 ```
 
-Store `M365_USERNAME` and `M365_PASSWORD` as **pipeline variables** (secret) or in Azure Key Vault.
+Store `M365_ACCOUNT_NAME` and `M365_ACCOUNT_PASSWORD` as **pipeline variables** (secret) or in Azure Key Vault.
 
 ---
 layout: default

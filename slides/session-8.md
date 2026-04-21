@@ -345,7 +345,7 @@ transition: slideRight
 # Recap
 
 - 📦 `atk publish` — submit to the org catalog
-- 🔄 CI/CD with GitHub Actions & Azure DevOps — automate with `--username` / `--password`
+- 🔄 CI/CD with GitHub Actions & Azure DevOps — `M365_ACCOUNT_NAME` / `M365_ACCOUNT_PASSWORD` env vars
 - ✅ Staged apps — admin approval → Entra group targeting → gradual rollout
 
 **Next session**— **using coding agents to build declarative agents**. See you next week! 🚀

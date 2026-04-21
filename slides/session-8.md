@@ -184,20 +184,16 @@ transition: slideRight
 ```yaml
 trigger:
   branches:
-    include:
-      - main
+    include: [main]
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
   - task: NodeTool@0
-    inputs:
-      versionSpec: '20.x'
-
+    inputs: { versionSpec: '20.x' }
   - script: npm install -g @microsoft/m365agentstoolkit-cli
-    displayName: 'Install Agents Toolkit'
-
+    displayName: 'Install ATK CLI'
   - script: atk publish --env prod
     displayName: 'Publish to org catalog'
     env:
@@ -205,7 +201,7 @@ steps:
       M365_ACCOUNT_PASSWORD: $(M365_ACCOUNT_PASSWORD)
 ```
 
-Store `M365_ACCOUNT_NAME` and `M365_ACCOUNT_PASSWORD` as **pipeline variables** (secret) or in Azure Key Vault.
+> Store secrets as **pipeline variables** or in **Azure Key Vault**.
 
 ---
 layout: default

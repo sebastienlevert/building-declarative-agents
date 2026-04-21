@@ -12,8 +12,9 @@ An 8-week video series that progressively builds a production-ready **Zava Insur
 | 4 | [**Extending with Actions — API Plugins & MCP Servers**](slides/session-4.md) | ✅ Complete |
 | 5 | [**Advanced Manifest Capabilities & Multi-Source Orchestration**](slides/session-5.md) | ✅ Complete |
 | 6 | [**Connected Agents — Composing an Agent Ecosystem**](slides/session-6.md) | ✅ Complete |
-| 7 | Testing and Debugging your Agent | 🔜 Coming soon |
-| 8 | Publishing, Governance & Real-World Patterns | 🔜 Coming soon |
+| 7 | [**Testing and Debugging your Agent**](slides/session-7.md) | ✅ Complete |
+| 8 | [**Shipping — Publishing, CI/CD & Governance**](slides/session-8.md) | ✅ Complete |
+| 9 | Using Coding Agents to Build Declarative Agents | 🔜 Coming soon |
 
 ## The Agent Ecosystem
 

@@ -323,7 +323,7 @@ Not every agent needs full admin approval. If your declarative agent **doesn't h
 atk share --scope shared --emails colleague@contoso.com --env prod
 
 # Share with the entire tenant
-atk share --scope shared --env prod
+atk share --scope tenant --env prod
 ```
 
 | | `atk share` | `atk publish` |
@@ -386,92 +386,6 @@ Alex opens **Microsoft 365 Copilot** and sees the HR Onboarding Buddy:
 This is what 8 sessions of work looks like from the user's perspective — clean, helpful, and instant.
 
 ---
-layout: section
-theme: quantum
-customTheme: .demo/templates/microsoft-theme.css
-transition: fadeIn
----
-
-# Real-World Patterns
-
----
-layout: default
-theme: quantum
-customTheme: .demo/templates/microsoft-theme.css
-transition: slideRight
----
-
-# Pattern 1: Version Instructions Like Code
-
-Your instructions file is the **most important artifact** in a declarative agent.
-
-- 📂 Keep it in source control
-- 🔀 Review changes in PRs
-- 🧪 Test instruction changes before merging
-
-> _"Never discuss compensation"_ vs. _"Avoid discussing compensation"_ produces **very** different results. Test every change.
-
----
-layout: default
-theme: quantum
-customTheme: .demo/templates/microsoft-theme.css
-transition: slideRight
----
-
-# Pattern 2: Start Narrow, Expand Gradually
-
-Don't launch a "do everything" agent. Our HR Buddy started as a greeter and grew over 8 weeks.
-
-The biggest failed agents tried to do **too much on day one**. Users got confused, the agent made mistakes, and the team lost confidence.
-
-> Launch with instructions + knowledge → gather feedback → add actions.
-
----
-layout: default
-theme: quantum
-customTheme: .demo/templates/microsoft-theme.css
-transition: slideRight
----
-
-# Pattern 3: Monitor What Users Actually Ask
-
-Once deployed, pay attention to what users ask that the agent **can't handle**. These gaps tell you what to build next.
-
-> If 30% of conversations end with _"I can't help with that"_ — you've found your next sprint.
-
----
-layout: default
-theme: quantum
-customTheme: .demo/templates/microsoft-theme.css
-transition: slideRight
----
-
-# Pattern 4: MCP Servers Are Your Extensibility Strategy
-
-Building multiple agents? MCP servers are **composable toolkits**.
-
-A helpdesk MCP server built for the HR Buddy can be reused by an IT Support agent, a Facilities agent, or any agent that needs ticketing.
-
-> Build tools once, compose everywhere.
-
----
-layout: default
-theme: quantum
-customTheme: .demo/templates/microsoft-theme.css
-transition: slideRight
----
-
-# Pattern 5: Know When NOT to Use a Declarative Agent
-
-| Use Declarative Agents When | Consider Custom Engine Agents When |
-|:---|:---|
-| Knowledge retrieval + light actions | Full control over conversation flow |
-| Rapid dev without custom bot infra | Real-time streaming or complex workflows |
-| Deep M365 integration & governance | Channels outside Microsoft 365 |
-
-> There's no wrong choice — just the right tool for the right job.
-
----
 layout: default
 theme: quantum
 customTheme: .demo/templates/microsoft-theme.css
@@ -506,9 +420,8 @@ transition: slideRight
 - 🔄 CI/CD with GitHub Actions & Azure DevOps — automate with `--username` / `--password`
 - ✅ Staged apps — admin approval → Entra group targeting → gradual rollout
 - 🤝 `atk share` — fast distribution for knowledge-only agents without actions
-- 🏗️ Real-world patterns — version instructions, start narrow, monitor usage
 
-**Next session** — **using coding agents to build declarative agents**. See you next week! 🚀
+**Next session**— **using coding agents to build declarative agents**. See you next week! 🚀
 
 ---
 layout: intro

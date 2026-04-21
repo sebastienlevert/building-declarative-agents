@@ -617,8 +617,9 @@ transition: slideRight
 - ✅ Staged apps — admin approval → Entra group targeting → gradual rollout
 - 🤝 `atk share` — fast distribution for knowledge-only agents without actions
 - 🏗️ Real-world patterns — version instructions, start narrow, monitor usage
+- 🤖 Graph API — service principal automation with no user credentials
 
-**Thank you for following along. Go build something amazing!** 🚀
+**Next session** — **using coding agents to build declarative agents**. See you next week! 🚀
 
 ---
 layout: intro

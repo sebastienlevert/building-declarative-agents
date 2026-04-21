@@ -47,13 +47,14 @@ customTheme: .demo/templates/microsoft-theme.css
 transition: slideRight
 ---
 
-# Three Stages to Production
+# Four Stages to Production
 
 Publishing a declarative agent follows the standard Teams app lifecycle — your IT admins already know this workflow.
 
 | Stage | Who | What Happens |
 |:---|:---|:---|
 | 🧑‍💻 **Developer Sideload** | You | F5 / sideloading — only you can see it |
+| 🤝 **Developer Sharing** | You | Share with your team / stakeholders for testing before broader access |
 | 📦 **Org Submission** | You | Submit to the tenant app catalog — pending until reviewed |
 | ✅ **Admin Approval** | IT Admin | Review permissions, data access, then approve for users |
 

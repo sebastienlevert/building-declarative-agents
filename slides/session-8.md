@@ -314,48 +314,22 @@ customTheme: .demo/templates/microsoft-theme.css
 transition: slideRight
 ---
 
-# The `share` Command — A Lightweight Alternative
+# `atk share` — Skip Admin Approval
 
-Not every agent needs full admin approval. If your declarative agent **doesn't have actions** (no API plugins, no MCP servers), you can use `atk share` to distribute it directly.
+No actions? No admin needed. Use `atk share` for **knowledge-only** declarative agents.
 
 ```bash
-# Share with specific colleagues
 atk share --scope shared --emails colleague@contoso.com --env prod
-
-# Share with the entire tenant
 atk share --scope tenant --env prod
 ```
 
 | | `atk share` | `atk publish` |
 |:---|:---|:---|
-| **Audience** | Specific users or tenant | Org catalog (admin-gated) |
-| **Admin approval** | Not required | Required |
+| **Admin approval** | ❌ Not required | ✅ Required |
 | **Actions (API/MCP)** | ❌ Not supported | ✅ Supported |
-| **Best for** | Knowledge-only agents, quick distribution | Full-featured agents with actions |
+| **Best for** | Knowledge-only, fast distribution | Full-featured agents with governance |
 
----
-layout: default
-theme: quantum
-customTheme: .demo/templates/microsoft-theme.css
-transition: slideRight
----
-
-# When to Use Share vs. Publish
-
-Use **`atk share`** when your agent is:
-
-- 📚 **Knowledge-only** — grounded in SharePoint, embedded files, or web content
-- 🚀 **Needs fast distribution** — skip the admin approval queue
-- 🧪 **In early feedback mode** — share with a test group before formal publishing
-- 🏗️ **Pro-code but simple** — built with the Agents Toolkit, no actions needed
-
-Use **`atk publish`** when your agent:
-
-- 🔧 Has **API plugins or MCP servers** — actions require admin review
-- 🏢 Needs **org-wide catalog presence** — users discover it in the Copilot store
-- 🔐 Requires **formal governance** — audit trail, access control by Entra groups
-
-> `share` is the fastest path to get a pro-code declarative agent into colleagues' hands.
+> `share` is the fastest path to get a pro-code agent into colleagues' hands.
 
 ---
 layout: section

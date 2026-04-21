@@ -228,6 +228,121 @@ customTheme: .demo/templates/microsoft-theme.css
 transition: fadeIn
 ---
 
+# Automating with Microsoft Graph API
+
+---
+layout: default
+theme: quantum
+customTheme: .demo/templates/microsoft-theme.css
+transition: slideRight
+---
+
+# Graph API — The Other Path
+
+The ATK CLI isn't the only way to automate. The **Microsoft Graph API** lets you publish directly using a **service principal** — no user credentials needed.
+
+| Approach | Auth Model | Best For |
+|:---|:---|:---|
+| `atk publish --username --password` | User credentials (delegated) | Quick setup, small teams |
+| **Graph API + service principal** | Client credentials (app-only) | Enterprise CI/CD, no human in the loop |
+
+The Graph API approach uses an **Entra ID app registration** with application permissions — no user account required at all.
+
+---
+layout: default
+theme: quantum
+customTheme: .demo/templates/microsoft-theme.css
+transition: slideRight
+---
+
+# Graph API: Publishing Flow
+
+**Step 1** — Register an Entra ID app with `AppCatalog.ReadWrite.All` (application permission, admin-consented)
+
+**Step 2** — Acquire a token using client credentials
+
+```bash
+curl -X POST "https://login.microsoftonline.com/$TENANT_ID/oauth2/v2.0/token" \
+  -d "client_id=$CLIENT_ID" \
+  -d "client_secret=$CLIENT_SECRET" \
+  -d "scope=https://graph.microsoft.com/.default" \
+  -d "grant_type=client_credentials"
+```
+
+**Step 3** — Upload the app package to the org catalog
+
+```bash
+curl -X POST "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps" \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/zip" \
+  --data-binary "@app-package.zip"
+```
+
+---
+layout: default
+theme: quantum
+customTheme: .demo/templates/microsoft-theme.css
+transition: slideRight
+---
+
+# Graph API: Updating & Review
+
+To **update** an existing app in the catalog:
+
+```bash
+PUT /appCatalogs/teamsApps/{teamsAppId}/appDefinitions
+Content-Type: application/zip
+```
+
+The response includes `requiresReview` — if the update changes permissions or capabilities, an admin must approve before it goes live.
+
+| Scenario | `requiresReview` | What Happens |
+|:---|:---|:---|
+| Instruction changes only | `false` | Update goes live immediately |
+| New API plugin added | `true` | Pending admin approval in TAC |
+| Permission scope changes | `true` | Pending admin approval in TAC |
+
+> This is the same staged approval flow — but triggered **entirely from your pipeline** with no human credentials.
+
+---
+layout: default
+theme: quantum
+customTheme: .demo/templates/microsoft-theme.css
+transition: slideRight
+---
+
+# Graph API in GitHub Actions
+
+```yaml
+- name: Get Graph API token
+  id: token
+  run: |
+    TOKEN=$(curl -s -X POST \
+      "https://login.microsoftonline.com/${{ secrets.TENANT_ID }}/oauth2/v2.0/token" \
+      -d "client_id=${{ secrets.CLIENT_ID }}" \
+      -d "client_secret=${{ secrets.CLIENT_SECRET }}" \
+      -d "scope=https://graph.microsoft.com/.default" \
+      -d "grant_type=client_credentials" | jq -r '.access_token')
+    echo "token=$TOKEN" >> $GITHUB_OUTPUT
+
+- name: Publish to org catalog
+  run: |
+    curl -X POST \
+      "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps" \
+      -H "Authorization: Bearer ${{ steps.token.outputs.token }}" \
+      -H "Content-Type: application/zip" \
+      --data-binary "@app-package.zip"
+```
+
+> No user accounts, no passwords — just a **service principal** with the right permissions.
+
+---
+layout: section
+theme: quantum
+customTheme: .demo/templates/microsoft-theme.css
+transition: fadeIn
+---
+
 # Demo: CI/CD Pipeline in Action
 
 ---

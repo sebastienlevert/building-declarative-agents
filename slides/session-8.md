@@ -295,48 +295,6 @@ transition: fadeIn
 # Demo: Admin Approval & Staged Rollout
 
 ---
-layout: section
-theme: quantum
-customTheme: .demo/templates/microsoft-theme.css
-transition: fadeIn
----
-
-# Sharing Simple Agents Broadly
-
----
-layout: default
-theme: quantum
-customTheme: .demo/templates/microsoft-theme.css
-transition: slideRight
----
-
-# `atk share` — Skip Admin Approval
-
-No actions? No admin needed. Use `atk share` for **knowledge-only** declarative agents.
-
-```bash
-atk share --scope shared --emails colleague@contoso.com --env prod
-atk share --scope tenant --env prod
-```
-
-| | `atk share` | `atk publish` |
-|:---|:---|:---|
-| **Admin approval** | ❌ Not required | ✅ Required |
-| **Actions (API/MCP)** | ❌ Not supported | ✅ Supported |
-| **Best for** | Knowledge-only, fast distribution | Full-featured agents with governance |
-
-> `share` is the fastest path to get a pro-code agent into colleagues' hands.
-
----
-layout: section
-theme: quantum
-customTheme: .demo/templates/microsoft-theme.css
-transition: fadeIn
----
-
-# Demo: Sharing a Knowledge-Only Agent
-
----
 layout: default
 theme: quantum
 customTheme: .demo/templates/microsoft-theme.css
@@ -389,7 +347,6 @@ transition: slideRight
 - 📦 `atk publish` — submit to the org catalog
 - 🔄 CI/CD with GitHub Actions & Azure DevOps — automate with `--username` / `--password`
 - ✅ Staged apps — admin approval → Entra group targeting → gradual rollout
-- 🤝 `atk share` — fast distribution for knowledge-only agents without actions
 
 **Next session**— **using coding agents to build declarative agents**. See you next week! 🚀
 

@@ -1,0 +1,36 @@
+name: Publish Benefits Advisor
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "agents/benefits-advisor/**"
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: Publish to Org Catalog
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: agents/benefits-advisor
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Agents Toolkit CLI
+        run: npm install -g @microsoft/m365agentstoolkit-cli
+
+      - name: Publish to org catalog
+        run: |
+          atk publish --env dev \
+            --username "$M365_USERNAME" \
+            --password "$M365_PASSWORD"
+        env:
+          M365_USERNAME: ${{ secrets.M365_USERNAME }}
+          M365_PASSWORD: ${{ secrets.M365_PASSWORD }}

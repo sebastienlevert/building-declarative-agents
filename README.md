@@ -1,6 +1,6 @@
 # Building Declarative Agents with the Microsoft 365 Agents Toolkit
 
-An 8-week video series that progressively builds a production-ready **Zava Insurance HR Onboarding Buddy** — from scaffold to org-wide deployment — and composes it with specialist worker agents into a full agent ecosystem.
+An 9-part video series that progressively builds a production-ready **Zava Insurance HR Onboarding Buddy** — from scaffold to org-wide deployment — composes it with specialist worker agents into a full agent ecosystem, and caps it off by using coding agents to build agents.
 
 ## The Series
 
@@ -14,7 +14,7 @@ An 8-week video series that progressively builds a production-ready **Zava Insur
 | 6 | [**Connected Agents — Composing an Agent Ecosystem**](slides/session-6.md) | ✅ Complete |
 | 7 | [**Testing and Debugging your Agent**](slides/session-7.md) | ✅ Complete |
 | 8 | [**Shipping — Publishing, CI/CD & Governance**](slides/session-8.md) | ✅ Complete |
-| 9 | Using Coding Agents to Build Declarative Agents | 🔜 Coming soon |
+| 9 | [**Building Agents with Coding Agents**](slides/session-9.md) | ✅ Complete |
 
 ## The Agent Ecosystem
 

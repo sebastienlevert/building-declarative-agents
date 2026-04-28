@@ -12,36 +12,9 @@
             "discourage_model_knowledge": true
         }
     },
-    "conversation_starters": [
-        {
-            "title": "Compare Health Plans",
-            "text": "What's the difference between the Silver and Gold health plans?"
-        },
-        {
-            "title": "401(k) Match",
-            "text": "How does the 401(k) matching work at Zava Insurance?"
-        },
-        {
-            "title": "Enrollment Deadline",
-            "text": "When is the benefits enrollment deadline for new hires?"
-        },
-        {
-            "title": "Family Coverage",
-            "text": "I'm adding my spouse to my health plan — what are my options and costs?"
-        },
-        {
-            "title": "Parental Leave",
-            "text": "What's the parental leave policy? Is it the same for birth and adoptive parents?"
-        }
-    ],
     "capabilities": [
         {
-            "name": "OneDriveAndSharePoint",
-            "items_by_url": [
-                {
-                    "url": "${{BENEFITS_DOCUMENTS_URL}}"
-                }
-            ]
+            "name": "GraphicArt"
         },
         {
             "name": "CodeInterpreter"
